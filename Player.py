@@ -43,12 +43,9 @@ class Player:
             self.direction = 1
 
         self.rect.x += self.velocity.x
-        for wall in walls:
-            wall.collide_x(self)
-
         self.rect.y += self.velocity.y
         for wall in walls:
-            wall.collide_y(self)
+            wall.collide(self)
 
         camera.follow(self)
 
